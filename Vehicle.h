@@ -7,6 +7,10 @@ struct Vehicle
 {
     Vehicle(const std::string& n) : name(n) { }
     
+    virtual ~Vehicle() = default;
+    Vehicle(const Vehicle&) = default;
+    Vehicle& operator=(const Vehicle&) = default;
+    
     virtual void setSpeed(int s)
     {
         std::cout << "\nHighway is adjusting " << name << "'s speed to " << s << " mph" << std::endl;
