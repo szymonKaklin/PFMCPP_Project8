@@ -16,6 +16,6 @@ void SemiTruck::honkHorn()
 
 void SemiTruck::pullOver()
 {
-    setSpeed(65);
+    setSpeed(0);
     std::cout << name << ": g'day officer, what's the matter?" << std::endl;
 }
