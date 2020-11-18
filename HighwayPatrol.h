@@ -1,6 +1,6 @@
 #pragma once 
-
 #include "Vehicle.h"
+#include "Highway.h"
 
 struct HighwayPatrol : Vehicle 
 {
