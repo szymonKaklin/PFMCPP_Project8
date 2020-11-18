@@ -115,10 +115,34 @@ int main()
     motorcycles.reserve(3);
     trucks.reserve(3);
     
-    assert(false);
+    motorcycles.emplace_back("elias");
+    motorcycles.emplace_back("danielle");
+    motorcycles.emplace_back("murphy");
+
+    trucks.emplace_back("alan");
+    trucks.emplace_back("jeremy");
+    trucks.emplace_back("anna");
+     
+
+    //assert(false);
     //add the cars, motorcycles and trucks to the highway using range-based for() loops: for( element : vec ) { ... }
     //be careful to not accidentally make element copies when iterating.
-    
+
+    for( auto& v : cars )
+    {
+        highway.addVehicle(&v);
+    }
+    for( auto& v : motorcycles )
+    {
+        highway.addVehicle(&v);
+    }
+    for( auto& v : trucks )
+    {
+        highway.addVehicle(&v);  // implement truck and truck addVehicleInternal
+    }
+
+    //assert(false);
+
     HighwayPatrol cop;
     cop.scanHighway(&highway);
 
