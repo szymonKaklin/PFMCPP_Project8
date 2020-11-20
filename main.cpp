@@ -51,6 +51,11 @@ send me a DM to check your pull request
 #include <vector>
 #include <algorithm>
 #include <cassert>
+#include "Highway.h"
+#include "HighwayPatrol.h"
+#include "Car.h"
+#include "Motorcycle.h"
+#include "SemiTruck.h"
 
 int main()
 {
@@ -101,17 +106,39 @@ int main()
      construct 2 more Car instances via emplace_back.
      */
     
+    cars.emplace_back("bob");
+    cars.emplace_back("terry");
+
     /*
      now reserve and emplace_back your Trucks and Motorcyles
      */
+    motorcycles.reserve(3);
+    //trucks.reserve(3);
     
-    
-    
-    
-    assert(false);
+    motorcycles.emplace_back("elias");
+    motorcycles.emplace_back("danielle");
+    motorcycles.emplace_back("murphy");
+
+    trucks.emplace_back("alan");
+    trucks.emplace_back("jeremy");
+    trucks.emplace_back("anna");
+     
     //add the cars, motorcycles and trucks to the highway using range-based for() loops: for( element : vec ) { ... }
     //be careful to not accidentally make element copies when iterating.
-    
+
+    for( auto& v : cars )
+    {
+        highway.addVehicle(&v);
+    }
+    for( auto& v : motorcycles )
+    {
+        highway.addVehicle(&v);
+    }
+    for( auto& v : trucks )
+    {
+        highway.addVehicle(&v);
+    }
+
     HighwayPatrol cop;
     cop.scanHighway(&highway);
 

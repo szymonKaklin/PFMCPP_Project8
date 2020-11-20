@@ -1,2 +1,4 @@
 language = "cpp"
-run = "clang++ -std=c++17 -Weverything -Wno-c++98-compat -Wno-missing-prototypes main.cpp && ./a.out"
+run = "clang++ -std=c++17 -Weverything -Wno-c++98-compat -Wno-missing-prototypes -Wno-padded main.cpp Highway.cpp HighwayPatrol.cpp Car.cpp Motorcycle.cpp SemiTruck.cpp Vehicle.cpp && ./a.out"
+
+# using -Wno-padded to clear padding warnings
